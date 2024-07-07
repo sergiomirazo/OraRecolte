@@ -1,8 +1,10 @@
 $white: #ffffff;
 $black: #000000;
-$primary1: #6bb7be;
-$primary2: #f89646;
-$bgColor:#f9fafa;
+$primary1: #70BE56;
+$primary2: #00BDF2;
+$accent1: #6E2E99;
+
+$bgColor:#e4eeee;
 
 @mixin main-font {
   font-family: "Poppins", sans-serif;
@@ -125,11 +127,20 @@ h2 {}
         color: #272727;
         text-align: center;
         text-transform: uppercase;
+
       }
 
-      &.active,
+
+      &.active {
+        .nav-link {
+          color: $primary1;
+        }
+      
+      } 
       &:hover {
-        .nav-link {}
+        .nav-link {
+          color: $primary2;
+        }
       }
     }
   }
@@ -165,6 +176,7 @@ a:focus {
     font-weight: 700;
     color: #272727;
     text-transform: uppercase;
+    width: 200px;
   }
 }
 
@@ -252,6 +264,7 @@ a:focus {
   align-items: center;
   position: relative;
   background-color: $bgColor;
+  background-image: url("../images/portada2.png");
 
 
   .row {
@@ -270,10 +283,14 @@ a:focus {
       font-weight: bold;
       text-transform: uppercase;
       margin-bottom: 0;
+      color: $primary2;
+      text-shadow: 0 0 5px 0 rgba($color: #000000, $alpha: 0.25);
+      padding: 0.5rem;
     }
 
     p {
       margin: 25px 0;
+      color: $white;
     }
 
     .btn-box {
