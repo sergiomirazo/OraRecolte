@@ -2,12 +2,15 @@ $white: #ffffff;
 $black: #000000;
 $primary1: #70BE56;
 $primary2: #00BDF2;
-$accent1: #6E2E99;
+$accent1: #911ddf;
 
 $bgColor:#e4eeee;
 
 @mixin main-font {
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 
@@ -147,14 +150,14 @@ h2 {}
 }
 
 a,
-a:hover,
 a:focus {
   text-decoration: none;
+  color: $primary1;
 }
 
-a:hover,
-a:focus {
-  color: initial;
+a:hover{
+  color: $primary2;
+  text-decoration: none;
 }
 
 .btn,
@@ -283,8 +286,8 @@ a:focus {
       font-weight: bold;
       text-transform: uppercase;
       margin-bottom: 0;
-      color: $primary2;
-      text-shadow: 0 0 5px 0 rgba($color: #000000, $alpha: 0.25);
+      color: $primary1;
+      filter: drop-shadow(5px 10px 4px rgba(7, 0, 17, 0.6));
       padding: 0.5rem;
     }
 
@@ -778,7 +781,10 @@ a:focus {
     margin: 0;
 
     a {
-      color: inherit;
+      color: $primary1;
+    }
+    a:hover {
+      color: $primary2;
     }
   }
 }
