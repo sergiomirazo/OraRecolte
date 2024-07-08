@@ -1,5 +1,10 @@
-/* fonts import */
 @import url("../fonts/octin_sports_rg.ttf");
+.small {
+  font-size: 0.7em;
+  margin-top: 1rem;
+}
+
+/* fonts import */
 body {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
@@ -50,6 +55,33 @@ body {
   position: relative;
   font-weight: bold;
   text-transform: uppercase;
+}
+
+/* Carrusel */
+.carrusel {
+  display: flex;
+  overflow: hidden;
+  width: 80%;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0 auto;
+}
+.carrusel__track {
+  display: flex;
+  animation: scroll 20s linear infinite;
+}
+.carrusel__item {
+  width: 100px;
+  margin: 0 20px;
+  flex: 0 0 auto;
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 /*header section*/
@@ -192,7 +224,7 @@ a:hover {
   display: flex;
   align-items: center;
   position: relative;
-  background-color: #e4eeee;
+  background-color: #CDF3D0;
   background-image: url("../images/portada2.png");
 }
 .slider_section .row {
@@ -295,6 +327,9 @@ a:hover {
 .furniture_section .box .detail-box {
   margin-top: 15px;
 }
+.furniture_section .box .detail-box b {
+  color: #70BE56;
+}
 .furniture_section .box .detail-box h5 {
   text-transform: uppercase;
   font-size: 18px;
@@ -314,9 +349,12 @@ a:hover {
   text-transform: uppercase;
   font-size: 15px;
 }
+.furniture_section .box .detail-box .price_box a:hover {
+  color: #00BDF2;
+}
 
 .about_section {
-  background-color: #e4eeee;
+  background-color: #CDF3D0;
 }
 .about_section .row {
   align-items: center;
@@ -395,8 +433,6 @@ a:hover {
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
 }
 .client_section .box .img-box {
-  border-radius: 100%;
-  border: 10px solid #70BE56;
   margin-right: 25px;
   min-width: 175px;
   max-width: 175px;
@@ -450,7 +486,7 @@ a:hover {
 
 .contact_section {
   position: relative;
-  background-color: #e4eeee;
+  background-color: #CDF3D0;
   padding-top: 75px;
   padding-bottom: 75px;
 }

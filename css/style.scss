@@ -3,8 +3,15 @@ $black: #000000;
 $primary1: #70BE56;
 $primary2: #00BDF2;
 $accent1: #911ddf;
+$carrusel-width: 100px;
+$animation-duration: 20s;
 
-$bgColor:#e4eeee;
+$bgColor: #CDF3D0;
+
+.small{
+  font-size: 0.7em;
+  margin-top: 1rem;
+}
 
 @mixin main-font {
   font-family: "Montserrat", sans-serif;
@@ -86,6 +93,38 @@ body {
     font-weight: bold;
     text-transform: uppercase;
 
+  }
+}
+
+/* Carrusel */
+.carrusel {
+  display: flex;
+  overflow: hidden;
+  width: 80%;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  
+  
+  &__track {
+      display: flex;
+      animation: scroll $animation-duration linear infinite;
+      
+  }
+  
+  &__item {
+      width: $carrusel-width;
+      margin: 0 20px;
+      flex: 0 0 auto;
+  }
+
+  @keyframes scroll {
+      0% {
+          transform: translateX(0);
+      }
+      100% {
+          transform: translateX(-100%);
+      }
   }
 }
 
@@ -372,7 +411,9 @@ a:hover{
 
     .detail-box {
       margin-top: 15px;
-
+      b {
+        color: $primary1;
+      }
       h5 {
         text-transform: uppercase;
 
@@ -395,6 +436,9 @@ a:hover{
           color: $primary1;
           text-transform: uppercase;
           font-size: 15px;
+        }
+        a:hover {
+          color: $primary2;
         }
       }
     }
@@ -497,8 +541,7 @@ a:hover{
     box-shadow: 0 0 15px 0 rgba($color: #000000, $alpha: 0.15);
 
     .img-box {
-      border-radius: 100%;
-      border: 10px solid $primary1;
+      
       margin-right: 25px;
       min-width: 175px;
       max-width: 175px;
