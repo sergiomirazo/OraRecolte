@@ -1,0 +1,50 @@
+{
+    "medidor1": {
+        "title": "SERIE FL",
+        "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/26-1024x1024.png"
+    },
+    "medidor2": {
+        "title": "SERIE FLR",
+        "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/25-1024x1024.png"
+    },
+    "medidor3": {
+        "title": "SERIE FLSSH",
+        "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/24-1024x1024.png"
+    },
+    "medidor4": {
+        "title": "SERIE FLC",
+        "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/Green-Botanical-new-beauty-product-showcase-Instagram-post-3-1-1024x1024.png"
+    },
+    "medidor5": {
+        "title": "SERIE FLRP",
+        "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/23-1024x1024.png"
+    },
+    "medidor6": {
+        "title": "SERIE ULT",
+        "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/22-1024x1024.png"
+    },
+    "medidor7": {
+        "title": "SERIE ULTP",
+        "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/21-1024x1024.png"
+    },
+    "medidor8": {
+        "title": "SERIE WTI",
+        "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/20-1024x1024.png"
+    },
+    "medidor9": {
+        "title": "SERIE WCK",
+        "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/19-1024x1024.png"
+    },
+    "medidor10": {
+        "title": "SERIE WCKH",
+        "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/18-1024x1024.png"
+    },
+    "medidor11": {
+        "title": "SERIE WK",
+        "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/17-1024x1024.png"
+    },
+    "medidor12": {
+        "title": "SERIE WPK",
+        "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/16-1024x1024.png"
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "filtro1": {
+        "title": "FILTRO DE CANASTA",
+        "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/36-1024x1024.png"
+    },
+    "filtro2": {
+        "title": "FILTRO TIPO Y",
+        "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/35-1024x1024.png"
+    },
+    "filtro3": {
+        "title": "FILTRO TIPO Y",
+        "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/47-1024x1024.png"
+    },
+    "filtro4": {
+        "title": "FILTRO Y",
+        "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/50-1024x1024.png"
+    },
+    "filtro5": {
+        "title": "FILTRO Y",
+        "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/48-1024x1024.png"
+    },
+    "filtro6": {
+        "title": "FILTRO Y",
+        "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/46-1024x1024.png"
+    }
+}

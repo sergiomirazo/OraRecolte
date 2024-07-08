@@ -1,0 +1,38 @@
+{
+    "bomba1": {
+        "title": "BOMBA MANUAL",
+        "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/29-1024x1024.png"
+    },
+    "bomba2": {
+        "title": "BOMBA ELÉCTRICA",
+        "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/28-1024x1024.png"
+    },
+    "bomba3": {
+        "title": "BOMBA GASOLINA",
+        "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/27-1024x1024.png"
+    },
+    "bomba4": {
+        "title": "ELECROBOMBAS",
+        "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/6-1024x1024.png"
+    },
+    "bomba5": {
+        "title": "MOTOBOMBASALTA PRESIÓN",
+        "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/12-1024x1024.png"
+    },
+    "bomba6": {
+        "title": "MOTOBOMBAS PARA LODOS",
+        "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/Green-Botanical-new-beauty-product-showcase-Instagram-post-5-1024x1024.png"
+    },
+    "bomba7": {
+        "title": "MOTOBOMBAS PARA QUIMICOS",
+        "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/1-2-1024x1024.png"
+    },
+    "bomba8": {
+        "title": "TRACTOBOMBAS",
+        "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/Green-Botanical-new-beauty-product-showcase-Instagram-post-3-1024x1024.png"
+    },
+    "bomba9": {
+        "title": "MOTOBOMBAS SUMERGIBLES",
+        "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/2-2-1024x1024.png"
+    }
+}
