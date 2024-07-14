@@ -345,7 +345,7 @@ a:hover {
   color: #70BE56;
 }
 .products_section .box .detail-box .price_box a {
-  color: #70BE56;
+  color: #000000;
   text-transform: uppercase;
   font-size: 15px;
 }

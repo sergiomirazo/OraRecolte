@@ -42,3 +42,62 @@ function myMap() {
     };
     var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 }
+
+// valves modal window
+
+$(document).ready(function() {
+    let valvulasPerPage = 10;
+    let currentPage = 1;
+    let valvulasData = [];
+
+    // Load valvulas_data.json
+    $.getJSON('/js/valvulas_data.json', function(data) {
+        valvulasData = data;
+        renderValvulas(valvulasData, currentPage, valvulasPerPage);
+        renderPagination(valvulasData, valvulasPerPage);
+    });
+
+    function renderValvulas(data, page, itemsPerPage) {
+        let content = '';
+        let start = (page - 1) * itemsPerPage;
+        let end = start + itemsPerPage;
+        let paginatedItems = Object.keys(data).slice(start, end);
+
+        $.each(paginatedItems, function(index, key) {
+            let valvula = data[key];
+            content += `
+                <div class="valvula-item">
+                    <img src="/images/valvulas/${key}.png" alt="${valvula.title}" class="img-fluid">
+                    <h3>${valvula.title}</h3>
+                    <figcaption>${valvula.figcaption}</figcaption>
+                </div>
+                <hr>
+            `;
+        });
+
+        $('#valvulas-content').html(content);
+    }
+
+    function renderPagination(data, itemsPerPage) {
+        let pageCount = Math.ceil(Object.keys(data).length / itemsPerPage);
+        let paginationContent = '';
+
+        for (let i = 1; i <= pageCount; i++) {
+            paginationContent += `
+                <li class="page-item ${i === currentPage ? 'active' : ''}">
+                    <a class="page-link" href="#" data-page="${i}">${i}</a>
+                </li>
+            `;
+        }
+
+        $('#pagination').html(paginationContent);
+    }
+
+    // Pagination click event
+    $('#pagination').on('click', '.page-link', function(e) {
+        e.preventDefault();
+        currentPage = $(this).data('page');
+        renderValvulas(valvulasData, currentPage, valvulasPerPage);
+        renderPagination(valvulasData, valvulasPerPage);
+    });
+});
