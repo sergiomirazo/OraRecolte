@@ -11,7 +11,7 @@ getYear();
 // valves modal window
 
 $(document).ready(function() {
-    let itemsPerPage = 10;
+    let itemsPerPage = 4; 
     
     // Válvulas
     let currentPageValvulas = 1;
@@ -22,7 +22,7 @@ $(document).ready(function() {
             console.log('JSON de Válvulas Cargado Correctamente:', data);
             valvulasData = data;
             renderItems(valvulasData, currentPageValvulas, itemsPerPage, '#valvulas-content');
-            renderPagination(valvulasData, itemsPerPage, '#pagination-valvulas');
+            renderPagination(valvulasData, itemsPerPage, '#pagination-valvulas', currentPageValvulas);
         })
         .fail(function(jqxhr, textStatus, error) {
             let err = textStatus + ', ' + error;
@@ -38,7 +38,7 @@ $(document).ready(function() {
             console.log('JSON de Medidores Cargado Correctamente:', data);
             medidoresData = data;
             renderItems(medidoresData, currentPageMedidores, itemsPerPage, '#medidores-content');
-            renderPagination(medidoresData, itemsPerPage, '#pagination-medidores');
+            renderPagination(medidoresData, itemsPerPage, '#pagination-medidores', currentPageMedidores);
         })
         .fail(function(jqxhr, textStatus, error) {
             let err = textStatus + ', ' + error;
@@ -54,7 +54,7 @@ $(document).ready(function() {
             console.log('JSON de Bombas Cargado Correctamente:', data);
             bombasData = data;
             renderItems(bombasData, currentPageBombas, itemsPerPage, '#bombas-content');
-            renderPagination(bombasData, itemsPerPage, '#pagination-bombas');
+            renderPagination(bombasData, itemsPerPage, '#pagination-bombas', currentPageBombas);
         })
         .fail(function(jqxhr, textStatus, error) {
             let err = textStatus + ', ' + error;
@@ -70,11 +70,27 @@ $(document).ready(function() {
             console.log('JSON de Filtros Cargado Correctamente:', data);
             filtrosData = data;
             renderItems(filtrosData, currentPageFiltros, itemsPerPage, '#filtros-content');
-            renderPagination(filtrosData, itemsPerPage, '#pagination-filtros');
+            renderPagination(filtrosData, itemsPerPage, '#pagination-filtros', currentPageFiltros);
         })
         .fail(function(jqxhr, textStatus, error) {
             let err = textStatus + ', ' + error;
             console.log('Fallo en la carga del JSON de Filtros: ' + err);
+        });
+
+    // Abrazaderas
+    let currentPageAbrazaderas = 1;
+    let abrazaderasData = [];
+
+    $.getJSON('/js/abrazadera_data.json')
+        .done(function(data) {
+            console.log('JSON de Abrazaderas Cargado Correctamente:', data);
+            abrazaderasData = data;
+            renderItems(abrazaderasData, currentPageAbrazaderas, itemsPerPage, '#abrazaderas-content');
+            renderPagination(abrazaderasData, itemsPerPage, '#pagination-abrazaderas', currentPageAbrazaderas);
+        })
+        .fail(function(jqxhr, textStatus, error) {
+            let err = textStatus + ', ' + error;
+            console.log('Fallo en la carga del JSON de Abrazaderas: ' + err);
         });
 
     function renderItems(data, page, itemsPerPage, containerSelector) {
@@ -83,21 +99,25 @@ $(document).ready(function() {
         let end = start + itemsPerPage;
         let paginatedItems = Object.keys(data).slice(start, end);
 
+        console.log(`Renderizando desde el índice ${start} hasta el índice ${end}`);
         console.log('Elementos Paginados:', paginatedItems);
+        console.log('Total de elementos:', Object.keys(data).length);
 
         $.each(paginatedItems, function(index, key) {
             let item = data[key];
             let imgPath = containerSelector.includes('valvulas') ? 'valvulas' 
                          : containerSelector.includes('medidores') ? 'medidores' 
                          : containerSelector.includes('bombas') ? 'bombas' 
-                         : 'filtros';
+                         : containerSelector.includes('filtros') ? 'filtros'
+                         : 'abrazaderas';
+
             content += `
                 <div class="item">
-                    <img width="200" src="/images/${imgPath}/${key}.png" alt="${item.title}" class="img-fluid">
-                    <h3 style="color: var(--secondary);">${item.title}</h3>
-                    <p>${containerSelector.includes('valvulas') ? item.figcaption : ''}</p>
+                    <img width="100" src="/images/${imgPath}/${key}.png" alt="${item.title}" class="img-fluid">
+                    <h4 style="color: var(--secondary);">${item.title}</h4>
+                    <p>${containerSelector.includes('valvulas') || containerSelector.includes('abrazaderas') ? item.figcaption : ''}</p>
                 </div>
-                <hr style="color: var(--primary);">
+                
             `;
             console.log('Agregar ítem:', item);
         });
@@ -106,13 +126,13 @@ $(document).ready(function() {
         console.log('Contenido Final:', content);
     }
 
-    function renderPagination(data, itemsPerPage, paginationSelector) {
+    function renderPagination(data, itemsPerPage, paginationSelector, currentPage) {
         let pageCount = Math.ceil(Object.keys(data).length / itemsPerPage);
         let paginationContent = '';
 
         for (let i = 1; i <= pageCount; i++) {
             paginationContent += `
-                <li class="page-item ${i === (paginationSelector.includes('valvulas') ? currentPageValvulas : paginationSelector.includes('medidores') ? currentPageMedidores : paginationSelector.includes('bombas') ? currentPageBombas : currentPageFiltros) ? 'active' : ''}">
+                <li class="page-item ${i === currentPage ? 'active' : ''}">
                     <a class="page-link" href="#" data-page="${i}">${i}</a>
                 </li>
             `;
@@ -122,25 +142,34 @@ $(document).ready(function() {
     }
 
     // Manejar clics en paginación
-    $('#pagination-valvulas, #pagination-medidores, #pagination-bombas, #pagination-filtros').on('click', '.page-link', function(e) {
+    $('#pagination-valvulas, #pagination-medidores, #pagination-bombas, #pagination-filtros, #pagination-abrazaderas').on('click', '.page-link', function(e) {
         e.preventDefault();
         let page = $(this).data('page');
         if ($(this).parents('#pagination-valvulas').length) {
             currentPageValvulas = page;
+            console.log('Cargar página de válvulas:', currentPageValvulas);
             renderItems(valvulasData, currentPageValvulas, itemsPerPage, '#valvulas-content');
-            renderPagination(valvulasData, itemsPerPage, '#pagination-valvulas');
+            renderPagination(valvulasData, itemsPerPage, '#pagination-valvulas', currentPageValvulas);
         } else if ($(this).parents('#pagination-medidores').length) {
             currentPageMedidores = page;
+            console.log('Cargar página de medidores:', currentPageMedidores);
             renderItems(medidoresData, currentPageMedidores, itemsPerPage, '#medidores-content');
-            renderPagination(medidoresData, itemsPerPage, '#pagination-medidores');
+            renderPagination(medidoresData, itemsPerPage, '#pagination-medidores', currentPageMedidores);
         } else if ($(this).parents('#pagination-bombas').length) {
             currentPageBombas = page;
+            console.log('Cargar página de bombas:', currentPageBombas);
             renderItems(bombasData, currentPageBombas, itemsPerPage, '#bombas-content');
-            renderPagination(bombasData, itemsPerPage, '#pagination-bombas');
-        } else {
+            renderPagination(bombasData, itemsPerPage, '#pagination-bombas', currentPageBombas);
+        } else if ($(this).parents('#pagination-filtros').length) {
             currentPageFiltros = page;
+            console.log('Cargar página de filtros:', currentPageFiltros);
             renderItems(filtrosData, currentPageFiltros, itemsPerPage, '#filtros-content');
-            renderPagination(filtrosData, itemsPerPage, '#pagination-filtros');
+            renderPagination(filtrosData, itemsPerPage, '#pagination-filtros', currentPageFiltros);
+        } else {
+            currentPageAbrazaderas = page;
+            console.log('Cargar página de abrazaderas:', currentPageAbrazaderas);
+            renderItems(abrazaderasData, currentPageAbrazaderas, itemsPerPage, '#abrazaderas-content');
+            renderPagination(abrazaderasData, itemsPerPage, '#pagination-abrazaderas', currentPageAbrazaderas);
         }
     });
 });

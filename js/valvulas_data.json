@@ -1,137 +1,142 @@
 {
+    "valvula1": {
+        "title": "VÁLVULA COMPUERTA",
+        "figcaption": "HIERRO FUNDIDO 2″ a 12″",
+        "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/73-1024x1024.png"
+    },
     "valvula2": {
         "title": "VÁLVULA COMPUERTA",
-        "figcaption": "HIERRO FUNDIDO2″ a 12″",
+        "figcaption": "HIERRO FUNDIDO 2″ a 12″",
         "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/73-1024x1024.png"
     },
     "valvula3": {
         "title": "VÁLVULA CHECK COLUMPIO",
-        "figcaption": "HIERRO FUNDIDO2″ a 12″",
+        "figcaption": "HIERRO FUNDIDO 2″ a 12″",
         "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/72-1024x1024.png"
     },
     "valvula4": {
         "title": "VÁLVULA GLOBO",
-        "figcaption": "HIERRO FUNDIDO2″ a 12″",
+        "figcaption": "HIERRO FUNDIDO 2″ a 12″",
         "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/71-1024x1024.png"
     },
     "valvula5": {
         "title": "VÁLVULA MARIPOSA",
-        "figcaption": "HIERRO DÚCTILDISCO ACERO INOXIDABLE1″ a 48″",
+        "figcaption": "HIERRO DÚCTILDISCO ACERO INOXIDABLE 1″ a 48″",
         "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/74-1024x1024.png"
     },
     "valvula6": {
         "title": "VÁLVULA COMPUERTA",
-        "figcaption": "ACERO AL CARBON2″ a 24″",
+        "figcaption": "ACERO AL CARBON 2″ a 24″",
         "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/69-1024x1024.png"
     },
     "valvula7": {
         "title": "VÁLVULA COMPUERTA",
-        "figcaption": "ACERO INOXIDABLE1″ a 16″",
+        "figcaption": "ACERO INOXIDABLE 1″ a 16″",
         "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/70-1024x1024.png"
     },
     "valvula8": {
         "title": "VÁLVULA CHECK COLUMPIO",
-        "figcaption": "ACERO AL CARBÓN2″ a 24″",
+        "figcaption": "ACERO AL CARBÓN 2″ a 24″",
         "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/67-1024x1024.png"
     },
     "valvula9": {
         "title": "VÁLVULA CHECK COLUMPIO",
-        "figcaption": "ACERO INOXIDABLE1″ a 12″",
+        "figcaption": "ACERO INOXIDABLE 1″ a 12″",
         "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/66-1024x1024.png"
     },
     "valvula10": {
         "title": "VÁLVULA GLOBO",
-        "figcaption": "ACERO AL CARBON2″ a 12″",
+        "figcaption": "ACERO AL CARBON 2″ a 12″",
         "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/Green-Botanical-new-beauty-product-showcase-Instagram-post-1024x1024.png"
     },
     "valvula11": {
         "title": "VÁLVULA GLOBO",
-        "figcaption": "ACERO INOXIDABLE2″ a 8″",
+        "figcaption": "ACERO INOXIDABLE 2″ a 8″",
         "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/68-1024x1024.png"
     },
     "valvula12": {
         "title": "VÁLVULA COMPUERTA",
-        "figcaption": "ACERO AL CARBÓN FORJADO1/4″ a 2″",
+        "figcaption": "ACERO AL CARBÓN FORJADO 1/4″ a 2″",
         "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/65-1024x1024.png"
     },
     "valvula13": {
         "title": "VÁLVULA COMPUERTA",
-        "figcaption": "ACERO INOXIDABLE FORJADO1/2″ a 2″",
+        "figcaption": "ACERO INOXIDABLE FORJADO 1/2″ a 2″",
         "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/63-1024x1024.png"
     },
     "valvula14": {
         "title": "VÁLVULA CHECK PISTÓN",
-        "figcaption": "ACERO AL CARBÓN FORJADO1/4″ a 2″",
+        "figcaption": "ACERO AL CARBÓN FORJADO 1/4″ a 2″",
         "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/64-1024x1024.png"
     },
     "valvula16": {
         "title": "VÁLVULA CHECK WAFER",
-        "figcaption": "HIERRO DÚCTIL2″  a 24″",
+        "figcaption": "HIERRO DÚCTIL 2″  a 24″",
         "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/53-1024x1024.png"
     },
     "valvula17": {
         "title": "VÁLVULA CHECK WAFER",
-        "figcaption": "HIERRO DÚCTIL2″ a 12″",
+        "figcaption": "HIERRO DÚCTIL 2″ a 12″",
         "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/54-1024x1024.png"
     },
     "valvula18": {
         "title": "VÁLVULA CHECK WAFER",
-        "figcaption": "ACERO INOXIDABLE2″  a 10″",
+        "figcaption": "ACERO INOXIDABLE 2″  a 10″",
         "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/52-1024x1024.png"
     },
     "valvula19": {
         "title": "VÁLVULA CHECK WAFER",
-        "figcaption": "ACERO AL CARBÓN2″  a 10″",
+        "figcaption": "ACERO AL CARBÓN 2″  a 10″",
         "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/51-1024x1024.png"
     },
     "valvula20": {
         "title": "VÁLVULA CHECK COLUMPIO PETROLERA",
-        "figcaption": "HIERRO DÚCTIL  2000 PSI1″  4″",
+        "figcaption": "HIERRO DÚCTIL  2000 PSI 1″  4″",
         "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/62-1024x1024.png"
     },
     "valvula21": {
         "title": "VÁLVULA CHECK COLUMPIO PETROLERA",
-        "figcaption": "ACERO AL CARBÓN 3600-5000PSI1″ a 2″",
+        "figcaption": "ACERO AL CARBÓN 3600-5000PSI 1″ a 2″",
         "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/59-1024x1024.png"
     },
     "valvula22": {
         "title": "VÁLVULA ESFERA",
-        "figcaption": "HIERRO DÚCTIL 1000-2000 PSI1″ a 4″",
+        "figcaption": "HIERRO DÚCTIL 1000-2000 PSI 1″ a 4″",
         "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/61-1024x1024.png"
     },
     "valvula23": {
         "title": "VÁLVULA ESFERA",
-        "figcaption": "ACERO AL CARBÓN 3000-5000 PSI2″",
+        "figcaption": "ACERO AL CARBÓN 3000-5000 PSI 2″",
         "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/60-1024x1024.png"
     },
     "valvula24": {
         "title": "VÁLVULA ESFERA",
-        "figcaption": "ACERO INOXIDABLE1/4″ a 2″",
+        "figcaption": "ACERO INOXIDABLE 1/4″ a 2″",
         "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/55-1024x1024.png"
     },
     "valvula25": {
         "title": "VÁLVULA ESFERA FLOTANTE",
-        "figcaption": "ACERO INOXIDABLE1″  a 8″",
+        "figcaption": "ACERO INOXIDABLE 1″  a 8″",
         "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/56-1024x1024.png"
     },
     "valvula26": {
         "title": "VÁLVULA ESFERA FLOTANTE",
-        "figcaption": "CUERPO ACERO AL CARBONESFERAACERO INOXIDABLE1″  a 10″",
+        "figcaption": "CUERPO ACERO AL CARBONESFERAACERO INOXIDABLE 1″  a 10″",
         "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/58-1024x1024.png"
     },
     "valvula27": {
         "title": "VÁLVULA ESFERA TRUNNION",
-        "figcaption": "CUERPO ACERO AL CARBÓNESFERA ACERO INOXIDABLE2″  a 6″",
+        "figcaption": "CUERPO ACERO AL CARBÓNESFERA ACERO INOXIDABLE 2″  a 6″",
         "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/57-1024x1024.png"
     },
     "valvula28": {
         "title": "VÁLVULA CHECKSILENT",
-        "figcaption": "HIERRO DÚCTIL2″ a 36″",
+        "figcaption": "HIERRO DÚCTIL 2″ a 36″",
         "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/34-1024x1024.png"
     },
     "valvula29": {
         "title": "VÁLVULA FOOT",
-        "figcaption": "PICHANCHA4″ a 8″",
+        "figcaption": "PICHANCHA 4″ a 8″",
         "imgURL": "https://orarecolte.com.mx/wp-content/uploads/2024/02/33-1024x1024.png"
     },
     "valvula30": {
