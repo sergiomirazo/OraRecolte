@@ -17,7 +17,7 @@ $(document).ready(function() {
     let currentPageValvulas = 1;
     let valvulasData = [];
 
-    $.getJSON('/js/valvulas_data.json')
+    $.getJSON('js/valvulas_data.json')
         .done(function(data) {
             console.log('JSON de Válvulas Cargado Correctamente:', data);
             valvulasData = data;
@@ -33,7 +33,7 @@ $(document).ready(function() {
     let currentPageMedidores = 1;
     let medidoresData = [];
 
-    $.getJSON('/js/medidores_data.json')
+    $.getJSON('js/medidores_data.json')
         .done(function(data) {
             console.log('JSON de Medidores Cargado Correctamente:', data);
             medidoresData = data;
@@ -49,7 +49,7 @@ $(document).ready(function() {
     let currentPageBombas = 1;
     let bombasData = [];
 
-    $.getJSON('/js/bombas_data.json')
+    $.getJSON('js/bombas_data.json')
         .done(function(data) {
             console.log('JSON de Bombas Cargado Correctamente:', data);
             bombasData = data;
@@ -65,7 +65,7 @@ $(document).ready(function() {
     let currentPageFiltros = 1;
     let filtrosData = [];
 
-    $.getJSON('/js/filtros_data.json')
+    $.getJSON('js/filtros_data.json')
         .done(function(data) {
             console.log('JSON de Filtros Cargado Correctamente:', data);
             filtrosData = data;
@@ -81,7 +81,7 @@ $(document).ready(function() {
     let currentPageAbrazaderas = 1;
     let abrazaderasData = [];
 
-    $.getJSON('/js/abrazadera_data.json')
+    $.getJSON('js/abrazadera_data.json')
         .done(function(data) {
             console.log('JSON de Abrazaderas Cargado Correctamente:', data);
             abrazaderasData = data;
@@ -113,7 +113,7 @@ $(document).ready(function() {
 
             content += `
                 <div class="item">
-                    <img width="100" src="/images/${imgPath}/${key}.png" alt="${item.title}" class="img-fluid">
+                    <img width="100" src="images/${imgPath}/${key}.png" alt="${item.title}" class="img-fluid">
                     <h4 style="color: var(--secondary);">${item.title}</h4>
                     <p>${containerSelector.includes('valvulas') || containerSelector.includes('abrazaderas') ? item.figcaption : ''}</p>
                 </div>
