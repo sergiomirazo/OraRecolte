@@ -65,13 +65,18 @@ body {
   align-items: center;
   justify-content: space-evenly;
   margin: 0 auto;
+  position: relative;
 }
 .carrusel__track {
   display: flex;
+  width: 200%;
   animation: scroll 20s linear infinite;
 }
+.carrusel__track > * {
+  display: flex;
+}
 .carrusel__item {
-  width: 100px;
+  width: 150px;
   margin: 0 20px;
   flex: 0 0 auto;
 }
@@ -80,7 +85,7 @@ body {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
 

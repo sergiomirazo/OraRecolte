@@ -99,6 +99,9 @@ body {
 }
 
 /* Carrusel */
+$carrusel-width: 150px;  // Ejemplo de ancho para los items del carrusel
+$animation-duration: 20s;  // Duración de la animación
+
 .carrusel {
   display: flex;
   overflow: hidden;
@@ -106,27 +109,31 @@ body {
   align-items: center;
   justify-content: space-evenly;
   margin: 0 auto;
-  
-  
+  position: relative;
+
   &__track {
+    display: flex;
+    width: calc(2 * 100%);
+    animation: scroll $animation-duration linear infinite;
+    
+    & > * {
       display: flex;
-      animation: scroll $animation-duration linear infinite;
-      
+    }
   }
-  
+
   &__item {
-      width: $carrusel-width;
-      margin: 0 20px;
-      flex: 0 0 auto;
+    width: $carrusel-width;
+    margin: 0 20px;
+    flex: 0 0 auto;
   }
 
   @keyframes scroll {
-      0% {
-          transform: translateX(0);
-      }
-      100% {
-          transform: translateX(-100%);
-      }
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
   }
 }
 
