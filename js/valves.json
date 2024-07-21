@@ -1,0 +1,64 @@
+{
+    "Válvulas de control de flujo": {
+        "VÁLVULA COMPUERTA": {
+            "HIERRO FUNDIDO": "2″ a 12″",
+            "ACERO AL CARBON": "2″ a 24″",
+            "ACERO INOXIDABLE": "1″ a 16″",
+            "ACERO AL CARBÓN FORJADO": "1/4″ a 2″",
+            "ACERO INOXIDABLE FORJADO": "1/2″ a 2″"
+        },
+        "VÁLVULA MARIPOSA": {
+            "HIERRO DÚCTILDISCO ACERO INOXIDABLE": "1″ a 48″",
+            "PVC": "2″ a 6″"
+        },
+        "VÁLVULA ESFERA": {
+            "HIERRO DÚCTIL": "1000-2000 PSI 1″ a 4″",
+            "ACERO AL CARBÓN": "3000-5000 PSI 2″",
+            "ACERO INOXIDABLE": "1/4″ a 2″"
+        },
+        "VÁLVULA ESFERA FLOTANTE": {
+            "ACERO INOXIDABLE": "1″  a 8″",
+            "CUERPO ACERO AL CARBONESFERA ACERO INOXIDABLE": "1″  a 10″"
+        },
+        "VÁLVULA ESFERA TRUNNION": {
+            "CUERPO ACERO AL CARBÓNESFERA ACERO INOXIDABLE": "2″  a 6″"
+        }
+    },
+    "Válvulas automáticas de control": {
+        "VÁLVULA CHECK COLUMPIO": {
+            "HIERRO FUNDIDO": "2″ a 12″",
+            "ACERO AL CARBÓN": "2″ a 24″",
+            "ACERO INOXIDABLE": "1″ a 12″",
+            "PETROLERA HIERRO DÚCTIL": "2000 PSI 1″ 4″",
+            "PETROLERA ACERO AL CARBÓN": "3600-5000 PSI 1″ a 2″"
+        },
+        "VÁLVULA GLOBO": {
+            "HIERRO FUNDIDO": "2″ a 12″",
+            "ACERO AL CARBON": "2″ a 12″",
+            "ACERO INOXIDABLE": "2″ a 8″"
+        },
+        "VÁLVULA CHECK PISTÓN": {
+            "ACERO AL CARBÓN FORJADO": "1/4″ a 2″"
+        },
+        "VÁLVULA CHECK WAFER": {
+            "HIERRO DÚCTIL": "2″ a 24″",
+            "HIERRO DÚCTIL": "2″ a 12″",
+            "ACERO INOXIDABLE": "2″ a 10″",
+            "ACERO AL CARBÓN": "2″ a 10″"
+        },
+        "VÁLVULA CHECK SILENT": {
+            "HIERRO DÚCTIL": "2″ a 36″"
+        },
+        "VÁLVULA FOOT": {
+            "PICHANCHA": "4″ a 8″"
+        },
+        "VÁLVULA SURGE CHECK": {
+            "REDUCTORA DE VELOCIDAD": ""
+        }
+    },
+    "Válvulas de manejo de aire": {
+        "VÁLVULA DE ADMISIÓN, EXPULSIÓN Y ELIMINADORA DE AIRE": {
+            "COMBINADA": ""
+        }
+    }
+}
