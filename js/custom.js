@@ -1,4 +1,5 @@
 // to get current year
+/*
 function getYear() {
     var currentDate = new Date();
     var currentYear = currentDate.getFullYear();
@@ -6,7 +7,7 @@ function getYear() {
 }
 
 getYear();
-
+*/
 
 // valves modal window
 
@@ -172,4 +173,44 @@ $(document).ready(function() {
             renderPagination(abrazaderasData, itemsPerPage, '#pagination-abrazaderas', currentPageAbrazaderas);
         }
     });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Simular una fecha específica (puedes cambiar esta fecha para testear)
+    const simulateDate = new Date();
+    simulateDate.setFullYear(2023); // Cambia el año según necesites
+    simulateDate.setMonth(11); // Enero (Mes comienza en 0)
+    simulateDate.setDate(25); // Día de Reyes - 6 de Enero
+
+    const today = simulateDate;
+    console.log("Fecha simulada:", today);
+
+    const yyyy = today.getFullYear();
+    const mm = today.getMonth() + 1; // Meses comienzan en 0
+    const dd = today.getDate();
+
+    const logoElement = document.getElementById('logo');
+    const themeElement = document.getElementById('theme');
+
+    const holidays = [
+        { month: 1, day: 6, name: 'DIADEREYES' },
+        { month: 2, day: 14, name: 'SANVALENTIN' },
+        { month: 9, day: 16, name: 'INDEPENDENCIA' },
+        { month: 10, day: 31, name: 'HALLOWEEN' },
+        { month: 11, day: 2, name: 'DIADEMUERTOS' },
+        { month: 12, day: 25, name: 'NAVIDAD' }
+    ];
+
+    let logoName = '/images/ORARECOLTE_LOGO.png';
+    let themeName = '/images/THEME.png';
+
+    holidays.forEach(holiday => {
+        if (mm === holiday.month && dd === holiday.day) {
+            logoName = `/images/ORARECOLTE_LOGO_${holiday.name}.png`;
+            themeName = `/images/${holiday.name}.png`;
+        }
+    });
+
+    logoElement.src = logoName;
+    themeElement.src = themeName;
 });

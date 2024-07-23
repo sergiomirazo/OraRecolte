@@ -360,6 +360,14 @@ a:hover {
 
 .about_section {
   background-color: #CDF3D0;
+  background-image: url(/images/portada.png);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+}
+.about_section h2 {
+  color: #ffffff;
 }
 .about_section .row {
   align-items: center;
@@ -370,6 +378,7 @@ a:hover {
 .about_section .detail-box p {
   margin-top: 10px;
   margin-bottom: 35px;
+  color: #ffffff;
 }
 .about_section .detail-box a {
   display: inline-block;
