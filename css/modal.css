@@ -42,6 +42,19 @@
 
 }
 
+.item:hover{
+    display: flex;
+    background-color: rgba(116, 121, 120, 0.301);
+    border-radius: 1.2rem;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+    padding: 0;
+    margin: 0;
+
+}
+
 .modal-header,
 .modal-footer {
     flex-shrink: 0;
@@ -67,3 +80,20 @@
         max-width: 100vw; /* Hace que el modal sea 100% ancho en dispositivos pequeños */
     }
 }
+
+.zoom-img {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+  }
+  
+  .zoom-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all .3s ease;
+  }
+  
+  .zoom-img img:hover {
+    transform: scale(1.2);
+  }

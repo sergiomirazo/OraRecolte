@@ -113,7 +113,7 @@ $(document).ready(function() {
 
             content += `
                 <div class="item">
-                    <img width="300" src="/images/${imgPath}/${key}.png" alt="${item.title}" class="img-fluid">
+                    <div class="zoom-img"><img width="300" src="/images/${imgPath}/${key}.png" alt="${item.title}" class="img-fluid"></div>
                     <h4 style="color: var(--secondary);">${item.title}</h4>
                     <p>${containerSelector.includes('valvulas') || containerSelector.includes('abrazaderas') ? item.figcaption : ''}</p>
                 </div>

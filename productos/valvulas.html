@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Válvulas</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .category-box {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #000;
+            cursor: pointer;
+        }
+
+        .content {
+            margin-top: 20px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        h3 {
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        async function loadJSON() {
+            try {
+                const response = await fetch('../js/valves.json');
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error('Error loading JSON:', error);
+            }
+        }
+
+        function displayContent(category, content) {
+            const container = document.getElementById('content');
+            container.innerHTML = `<h2>${category}</h2>`;
+            
+            for (const [valveType, specs] of Object.entries(content)) {
+                const title = document.createElement('h3');
+                title.textContent = valveType;
+                container.appendChild(title);
+
+                const list = document.createElement('ul');
+                for (const [material, size] of Object.entries(specs)) {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `${material}: ${size}`;
+                    list.appendChild(listItem);
+                }
+                container.appendChild(list);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            const data = await loadJSON();
+
+            const categories = Object.keys(data);
+            const categoriesContainer = document.getElementById('categories');
+
+            categories.forEach(category => {
+                const box = document.createElement('div');
+                box.className = 'category-box';
+                box.textContent = category;
+                box.onclick = () => displayContent(category, data[category]);
+                categoriesContainer.appendChild(box);
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Sistema de Válvulas</h1>
+    </header>
+    <main>
+        <div id="categories" class="categories"></div>
+        <div id="content" class="content"></div>
+    </main>
+</body>
+</html>
