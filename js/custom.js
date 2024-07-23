@@ -20,14 +20,14 @@ $(document).ready(function() {
 
     $.getJSON('/js/valvulas_data.json')
         .done(function(data) {
-            console.log('JSON de Válvulas Cargado Correctamente:', data);
+            //console.log('JSON de Válvulas Cargado Correctamente:', data);
             valvulasData = data;
             renderItems(valvulasData, currentPageValvulas, itemsPerPage, '#valvulas-content');
             renderPagination(valvulasData, itemsPerPage, '#pagination-valvulas', currentPageValvulas);
         })
         .fail(function(jqxhr, textStatus, error) {
             let err = textStatus + ', ' + error;
-            console.log('Fallo en la carga del JSON de Válvulas: ' + err);
+            //console.log('Fallo en la carga del JSON de Válvulas: ' + err);
         });
 
     // Medidores
@@ -36,14 +36,14 @@ $(document).ready(function() {
 
     $.getJSON('/js/medidores_data.json')
         .done(function(data) {
-            console.log('JSON de Medidores Cargado Correctamente:', data);
+            //console.log('JSON de Medidores Cargado Correctamente:', data);
             medidoresData = data;
             renderItems(medidoresData, currentPageMedidores, itemsPerPage, '#medidores-content');
             renderPagination(medidoresData, itemsPerPage, '#pagination-medidores', currentPageMedidores);
         })
         .fail(function(jqxhr, textStatus, error) {
             let err = textStatus + ', ' + error;
-            console.log('Fallo en la carga del JSON de Medidores: ' + err);
+            //console.log('Fallo en la carga del JSON de Medidores: ' + err);
         });
 
     // Bombas
@@ -52,14 +52,14 @@ $(document).ready(function() {
 
     $.getJSON('/js/bombas_data.json')
         .done(function(data) {
-            console.log('JSON de Bombas Cargado Correctamente:', data);
+            //console.log('JSON de Bombas Cargado Correctamente:', data);
             bombasData = data;
             renderItems(bombasData, currentPageBombas, itemsPerPage, '#bombas-content');
             renderPagination(bombasData, itemsPerPage, '#pagination-bombas', currentPageBombas);
         })
         .fail(function(jqxhr, textStatus, error) {
             let err = textStatus + ', ' + error;
-            console.log('Fallo en la carga del JSON de Bombas: ' + err);
+            //console.log('Fallo en la carga del JSON de Bombas: ' + err);
         });
 
     // Filtros
@@ -68,14 +68,14 @@ $(document).ready(function() {
 
     $.getJSON('/js/filtros_data.json')
         .done(function(data) {
-            console.log('JSON de Filtros Cargado Correctamente:', data);
+            //console.log('JSON de Filtros Cargado Correctamente:', data);
             filtrosData = data;
             renderItems(filtrosData, currentPageFiltros, itemsPerPage, '#filtros-content');
             renderPagination(filtrosData, itemsPerPage, '#pagination-filtros', currentPageFiltros);
         })
         .fail(function(jqxhr, textStatus, error) {
             let err = textStatus + ', ' + error;
-            console.log('Fallo en la carga del JSON de Filtros: ' + err);
+            //console.log('Fallo en la carga del JSON de Filtros: ' + err);
         });
 
     // Abrazaderas
@@ -84,14 +84,14 @@ $(document).ready(function() {
 
     $.getJSON('/js/abrazadera_data.json')
         .done(function(data) {
-            console.log('JSON de Abrazaderas Cargado Correctamente:', data);
+            //console.log('JSON de Abrazaderas Cargado Correctamente:', data);
             abrazaderasData = data;
             renderItems(abrazaderasData, currentPageAbrazaderas, itemsPerPage, '#abrazaderas-content');
             renderPagination(abrazaderasData, itemsPerPage, '#pagination-abrazaderas', currentPageAbrazaderas);
         })
         .fail(function(jqxhr, textStatus, error) {
             let err = textStatus + ', ' + error;
-            console.log('Fallo en la carga del JSON de Abrazaderas: ' + err);
+            //console.log('Fallo en la carga del JSON de Abrazaderas: ' + err);
         });
 
     function renderItems(data, page, itemsPerPage, containerSelector) {
@@ -100,9 +100,9 @@ $(document).ready(function() {
         let end = start + itemsPerPage;
         let paginatedItems = Object.keys(data).slice(start, end);
 
-        console.log(`Renderizando desde el índice ${start} hasta el índice ${end}`);
-        console.log('Elementos Paginados:', paginatedItems);
-        console.log('Total de elementos:', Object.keys(data).length);
+        //console.log(`Renderizando desde el índice ${start} hasta el índice ${end}`);
+        //console.log('Elementos Paginados:', paginatedItems);
+        //console.log('Total de elementos:', Object.keys(data).length);
 
         $.each(paginatedItems, function(index, key) {
             let item = data[key];
@@ -120,11 +120,11 @@ $(document).ready(function() {
                 </div>
                 
             `;
-            console.log('Agregar ítem:', item);
+            //console.log('Agregar ítem:', item);
         });
 
         $(containerSelector).html(content);
-        console.log('Contenido Final:', content);
+        //console.log('Contenido Final:', content);
     }
 
     function renderPagination(data, itemsPerPage, paginationSelector, currentPage) {
@@ -148,27 +148,27 @@ $(document).ready(function() {
         let page = $(this).data('page');
         if ($(this).parents('#pagination-valvulas').length) {
             currentPageValvulas = page;
-            console.log('Cargar página de válvulas:', currentPageValvulas);
+            //console.log('Cargar página de válvulas:', currentPageValvulas);
             renderItems(valvulasData, currentPageValvulas, itemsPerPage, '#valvulas-content');
             renderPagination(valvulasData, itemsPerPage, '#pagination-valvulas', currentPageValvulas);
         } else if ($(this).parents('#pagination-medidores').length) {
             currentPageMedidores = page;
-            console.log('Cargar página de medidores:', currentPageMedidores);
+            //console.log('Cargar página de medidores:', currentPageMedidores);
             renderItems(medidoresData, currentPageMedidores, itemsPerPage, '#medidores-content');
             renderPagination(medidoresData, itemsPerPage, '#pagination-medidores', currentPageMedidores);
         } else if ($(this).parents('#pagination-bombas').length) {
             currentPageBombas = page;
-            console.log('Cargar página de bombas:', currentPageBombas);
+            //console.log('Cargar página de bombas:', currentPageBombas);
             renderItems(bombasData, currentPageBombas, itemsPerPage, '#bombas-content');
             renderPagination(bombasData, itemsPerPage, '#pagination-bombas', currentPageBombas);
         } else if ($(this).parents('#pagination-filtros').length) {
             currentPageFiltros = page;
-            console.log('Cargar página de filtros:', currentPageFiltros);
+            //console.log('Cargar página de filtros:', currentPageFiltros);
             renderItems(filtrosData, currentPageFiltros, itemsPerPage, '#filtros-content');
             renderPagination(filtrosData, itemsPerPage, '#pagination-filtros', currentPageFiltros);
         } else {
             currentPageAbrazaderas = page;
-            console.log('Cargar página de abrazaderas:', currentPageAbrazaderas);
+            //console.log('Cargar página de abrazaderas:', currentPageAbrazaderas);
             renderItems(abrazaderasData, currentPageAbrazaderas, itemsPerPage, '#abrazaderas-content');
             renderPagination(abrazaderasData, itemsPerPage, '#pagination-abrazaderas', currentPageAbrazaderas);
         }
@@ -178,9 +178,9 @@ $(document).ready(function() {
 document.addEventListener('DOMContentLoaded', function() {
     // Simular una fecha específica (puedes cambiar esta fecha para testear)
     const simulateDate = new Date();
-    simulateDate.setFullYear(2023); // Cambia el año según necesites
-    simulateDate.setMonth(11); // Enero (Mes comienza en 0)
-    simulateDate.setDate(25); // Día de Reyes - 6 de Enero
+    //simulateDate.setFullYear(2023); // Cambia el año según necesites
+    //simulateDate.setMonth(11); // Enero (Mes comienza en 0)
+    //simulateDate.setDate(25); // Día de Reyes - 6 de Enero
 
     const today = simulateDate;
     console.log("Fecha simulada:", today);
@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const yyyy = today.getFullYear();
     const mm = today.getMonth() + 1; // Meses comienzan en 0
     const dd = today.getDate();
-
+    console.log("Fecha (Formateada):", `${yyyy}-${mm}-${dd}`);
     const logoElement = document.getElementById('logo');
     const themeElement = document.getElementById('theme');
 
@@ -205,6 +205,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let themeName = '/images/THEME.png';
 
     holidays.forEach(holiday => {
+        
         if (mm === holiday.month && dd === holiday.day) {
             logoName = `/images/ORARECOLTE_LOGO_${holiday.name}.png`;
             themeName = `/images/${holiday.name}.png`;
