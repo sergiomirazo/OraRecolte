@@ -1,0 +1,30 @@
+{
+    "ebaa1":{
+        "title": "Ductile Iron Pipe Restraints",
+        "imgURL": "https://ebaa.com/images/products/overview/dip.png"
+    },
+    "ebaa2":{
+        "title": "PVC Pipe Restraints",
+        "imgURL": "https://ebaa.com/images/products/overview/pvc.png"
+    },
+    "ebaa3":{
+        "title": "Restrained Flange Adapters",
+        "imgURL": "https://ebaa.com/images/products/overview/flange.png"
+    },
+    "ebaa4":{
+        "title": "Restrained Couplings",
+        "imgURL": "https://ebaa.com/images/products/overview/coupling.png"
+    },
+    "ebaa5":{
+        "title": "HDPE Pipe Restraints",
+        "imgURL": "https://ebaa.com/images/products/overview/hdpe.png"
+    },
+    "ebaa6":{
+        "title": "Joint Restraint Glands",
+        "imgURL": "https://ebaa.com/images/products/overview/gasket.png"
+    },
+    "ebaa7":{
+        "title": "Meter Covers",
+        "imgURL": "https://ebaa.com/images/products/overview/meter.png"
+    }
+}
