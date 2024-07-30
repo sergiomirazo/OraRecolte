@@ -84,6 +84,20 @@ $(document).ready(function() {
         .fail(function(jqxhr, textStatus, error) {
             let err = textStatus + ', ' + error;
         });
+    
+    // LEEFO
+    let currentPageLeefo = 1;
+    let leefoData = [];
+
+    $.getJSON('/js/leefo_data.json')
+        .done(function(data) {
+            leefoData = data;
+            renderItems(leefoData, currentPageLeefo, itemsPerPage, '#leefo-content');
+            renderPagination(leefoData, itemsPerPage, '#pagination-leefo', currentPageLeefo);
+        })
+        .fail(function(jqxhr, textStatus, error) {
+            let err = textStatus + ', ' + error;
+        });
 
     function renderItems(data, page, itemsPerPage, containerSelector) {
         let content = '';
@@ -100,6 +114,7 @@ $(document).ready(function() {
                          : containerSelector.includes('medidores') ? 'medidores' 
                          : containerSelector.includes('bombas') ? 'bombas' 
                          : containerSelector.includes('filtros') ? 'filtros'
+                         : containerSelector.includes('leefo') ? 'leefo'
                          : 'abrazaderas';
 
             content += `
@@ -134,7 +149,7 @@ $(document).ready(function() {
         $(paginationSelector).html(paginationContent);
     }
 
-    $('#pagination-valvulas, #pagination-medidores, #pagination-bombas, #pagination-filtros, #pagination-abrazaderas').on('click', '.page-link', function(e) {
+    $('#pagination-valvulas, #pagination-medidores, #pagination-bombas, #pagination-filtros, #pagination-abrazaderas, #pagination-leefo').on('click', '.page-link', function(e) {
         e.preventDefault();
         let page = $(this).data('page');
         if ($(this).parents('#pagination-valvulas').length) {
@@ -153,6 +168,10 @@ $(document).ready(function() {
             currentPageFiltros = page;
             renderItems(filtrosData, currentPageFiltros, itemsPerPage, '#filtros-content');
             renderPagination(filtrosData, itemsPerPage, '#pagination-filtros', currentPageFiltros);
+        } else if ($(this).parents('#pagination-leefo').length) {
+            currentPageLeefo = page;
+            renderItems(leefoData, currentPageLeefo, itemsPerPage, '#leefo-content');
+            renderPagination(leefoData, itemsPerPage, '#pagination-leefo', currentPageLeefo);
         } else {
             currentPageAbrazaderas = page;
             renderItems(abrazaderasData, currentPageAbrazaderas, itemsPerPage, '#abrazaderas-content');
