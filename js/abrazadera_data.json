@@ -1,23 +1,57 @@
 {
-    "abrazadera1":{
-        "title": "ABRAZADERA DE REPARACIÓN DRESSER",
-        "figcaption": "Tamaños de tubería nominal 14\" a 54\" <br> Abrazadera de reparación diseñada para ahorrar tiempo y mano de obra en tuberías de agua, petróleo, gas y aguas residuales."
+    "abrazadera1": {
+      "title": "ABRAZADERA DE REPARACIÓN DRESSER",
+      "figcaption": "Tamaños de tubería nominal 14\" a 54\" "
     },
-    "abrazadera2":{
-        "title": "ADAPTADOR BRIDADO EBAA IRON",
-        "figcaption": "Tamaños de diámetro de tubería nominal 3\" a 48\" <br> Adaptador bridado para tuberías de PVC, Hierro Dúctil, Acero y Concreto."
+    "abrazadera2": {
+      "title": "ADAPTADOR BRIDADO abrazadera IRON",
+      "figcaption": "Tamaños de diámetro de tubería nominal 3\" a 48\" "
     },
     "abrazadera3": {
-        "title": "JUNTA DE EXPANSIÓN",
-        "figcaption": "Tamaños de diámetro de tubería nominal 1\" a 72\". <br> <ol><li>Hule interior: Neopreno Negro</li><li>Refuerzo textil: Nylon</li><li>Refuerzo: Metálico</li><li>Hule Exterior: Neopreno Negro</li><li>Anillos de retención: A-36 Espesor 3/8</li></ol>"
+      "title": "JUNTA DE EXPANSIÓN",
+      "figcaption": "Tamaños de diámetro de tubería nominal 1\" a 72\" "
     },
     "abrazadera4": {
-        "title": "ADAPTADOR UNIVERSAL BRIDADO SFLOW",
-        "figcaption": " "
+      "title": "ADAPTADOR UNIVERSAL BRIDADO SFLOW",
+      "figcaption": ""
     },
     "abrazadera5": {
-        "title": "COPLE UNIVERSAL DE RANGO AMPLIO SFLOW",
-        "figcaption": " "
+      "title": "COPLE UNIVERSAL DE RANGO AMPLIO SFLOW",
+      "figcaption": ""
+    },
+    "abrazadera6": {
+      "title": "Restricciones de tuberías de hierro dúctil",
+      "figcaption": "",
+      "imgURL": "https://abrazadera.com/images/products/overview/dip.png"
+    },
+    "abrazadera7": {
+      "title": "Restricciones de tuberías de PVC",
+      "figcaption": "",
+      "imgURL": "https://abrazadera.com/images/products/overview/pvc.png"
+    },
+    "abrazadera8": {
+      "title": "Adaptadores de brida restringidos",
+      "figcaption": "",
+      "imgURL": "https://abrazadera.com/images/products/overview/flange.png"
+    },
+    "abrazadera9": {
+      "title": "Acoplamientos restringidos",
+      "figcaption": "",
+      "imgURL": "https://abrazadera.com/images/products/overview/coupling.png"
+    },
+    "abrazadera10": {
+      "title": "Restricciones de tuberías HDPE",
+      "figcaption": "",
+      "imgURL": "https://abrazadera.com/images/products/overview/hdpe.png"
+    },
+    "abrazadera11": {
+      "title": "Glándulas de restricción conjunta",
+      "figcaption": "",
+      "imgURL": "https://abrazadera.com/images/products/overview/gasket.png"
+    },
+    "abrazadera12": {
+      "title": "Cubiertas de medidor",
+      "figcaption": "",
+      "imgURL": "https://abrazadera.com/images/products/overview/meter.png"
     }
-
-}
+  }
