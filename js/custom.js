@@ -1,5 +1,4 @@
 // to get current year
-
 function getYear() {
     var currentDate = new Date();
     var currentYear = currentDate.getFullYear();
@@ -8,26 +7,26 @@ function getYear() {
 
 getYear();
 
-
-// valves modal window
-
 $(document).ready(function() {
-    let itemsPerPage = 10; 
-    
+    let itemsPerPage = 9; // 3x3 grid
+
+    // Function to determine number of items per row based on screen size
+    function getItemsPerRow() {
+        return window.innerWidth >= 992 ? 3 : 1; // 3 items per row for larger screens, 1 item per row for smaller screens
+    }
+
     // Válvulas
     let currentPageValvulas = 1;
     let valvulasData = [];
 
     $.getJSON('/js/valvulas_data.json')
         .done(function(data) {
-            //console.log('JSON de Válvulas Cargado Correctamente:', data);
             valvulasData = data;
             renderItems(valvulasData, currentPageValvulas, itemsPerPage, '#valvulas-content');
             renderPagination(valvulasData, itemsPerPage, '#pagination-valvulas', currentPageValvulas);
         })
         .fail(function(jqxhr, textStatus, error) {
             let err = textStatus + ', ' + error;
-            //console.log('Fallo en la carga del JSON de Válvulas: ' + err);
         });
 
     // Medidores
@@ -36,14 +35,12 @@ $(document).ready(function() {
 
     $.getJSON('/js/medidores_data.json')
         .done(function(data) {
-            //console.log('JSON de Medidores Cargado Correctamente:', data);
             medidoresData = data;
             renderItems(medidoresData, currentPageMedidores, itemsPerPage, '#medidores-content');
             renderPagination(medidoresData, itemsPerPage, '#pagination-medidores', currentPageMedidores);
         })
         .fail(function(jqxhr, textStatus, error) {
             let err = textStatus + ', ' + error;
-            //console.log('Fallo en la carga del JSON de Medidores: ' + err);
         });
 
     // Bombas
@@ -52,14 +49,12 @@ $(document).ready(function() {
 
     $.getJSON('/js/bombas_data.json')
         .done(function(data) {
-            //console.log('JSON de Bombas Cargado Correctamente:', data);
             bombasData = data;
             renderItems(bombasData, currentPageBombas, itemsPerPage, '#bombas-content');
             renderPagination(bombasData, itemsPerPage, '#pagination-bombas', currentPageBombas);
         })
         .fail(function(jqxhr, textStatus, error) {
             let err = textStatus + ', ' + error;
-            //console.log('Fallo en la carga del JSON de Bombas: ' + err);
         });
 
     // Filtros
@@ -68,14 +63,12 @@ $(document).ready(function() {
 
     $.getJSON('/js/filtros_data.json')
         .done(function(data) {
-            //console.log('JSON de Filtros Cargado Correctamente:', data);
             filtrosData = data;
             renderItems(filtrosData, currentPageFiltros, itemsPerPage, '#filtros-content');
             renderPagination(filtrosData, itemsPerPage, '#pagination-filtros', currentPageFiltros);
         })
         .fail(function(jqxhr, textStatus, error) {
             let err = textStatus + ', ' + error;
-            //console.log('Fallo en la carga del JSON de Filtros: ' + err);
         });
 
     // Abrazaderas
@@ -84,14 +77,12 @@ $(document).ready(function() {
 
     $.getJSON('/js/abrazadera_data.json')
         .done(function(data) {
-            //console.log('JSON de Abrazaderas Cargado Correctamente:', data);
             abrazaderasData = data;
             renderItems(abrazaderasData, currentPageAbrazaderas, itemsPerPage, '#abrazaderas-content');
             renderPagination(abrazaderasData, itemsPerPage, '#pagination-abrazaderas', currentPageAbrazaderas);
         })
         .fail(function(jqxhr, textStatus, error) {
             let err = textStatus + ', ' + error;
-            //console.log('Fallo en la carga del JSON de Abrazaderas: ' + err);
         });
 
     function renderItems(data, page, itemsPerPage, containerSelector) {
@@ -99,11 +90,10 @@ $(document).ready(function() {
         let start = (page - 1) * itemsPerPage;
         let end = start + itemsPerPage;
         let paginatedItems = Object.keys(data).slice(start, end);
+        let itemsPerRow = getItemsPerRow();
 
-        //console.log(`Renderizando desde el índice ${start} hasta el índice ${end}`);
-        //console.log('Elementos Paginados:', paginatedItems);
-        //console.log('Total de elementos:', Object.keys(data).length);
-
+        content += `<div class="row">`;
+        
         $.each(paginatedItems, function(index, key) {
             let item = data[key];
             let imgPath = containerSelector.includes('valvulas') ? 'valvulas' 
@@ -113,18 +103,20 @@ $(document).ready(function() {
                          : 'abrazaderas';
 
             content += `
-                <div class="item">
-                    <div class="zoom-img"><img width="300" src="/images/${imgPath}/${key}.png" alt="${item.title}" class="img-fluid"></div>
-                    <h4 style="color: var(--secondary);">${item.title}</h4>
-                    <p>${containerSelector.includes('valvulas') || containerSelector.includes('abrazaderas') ? item.figcaption : ''}</p>
-                </div>
-                
-            `;
-            //console.log('Agregar ítem:', item);
+                <div class="col-md-${12/itemsPerRow} mb-4">
+                    <div class="item">
+                        <div class="zoom-img"><img width="300" src="/images/${imgPath}/${key}.png" alt="${item.title}" class="img-fluid"></div>
+                        <h4 style="color: var(--secondary);">${item.title}</h4>
+                        <p>${containerSelector.includes('valvulas') || containerSelector.includes('abrazaderas') ? item.figcaption : ''}</p>
+                    </div>
+                </div>`;
+            if ((index + 1) % itemsPerRow === 0 && index < paginatedItems.length - 1) {
+                content += `</div><div class="row">`;
+            }
         });
 
+        content += `</div>`;
         $(containerSelector).html(content);
-        //console.log('Contenido Final:', content);
     }
 
     function renderPagination(data, itemsPerPage, paginationSelector, currentPage) {
@@ -142,33 +134,27 @@ $(document).ready(function() {
         $(paginationSelector).html(paginationContent);
     }
 
-    // Manejar clics en paginación
     $('#pagination-valvulas, #pagination-medidores, #pagination-bombas, #pagination-filtros, #pagination-abrazaderas').on('click', '.page-link', function(e) {
         e.preventDefault();
         let page = $(this).data('page');
         if ($(this).parents('#pagination-valvulas').length) {
             currentPageValvulas = page;
-            //console.log('Cargar página de válvulas:', currentPageValvulas);
             renderItems(valvulasData, currentPageValvulas, itemsPerPage, '#valvulas-content');
             renderPagination(valvulasData, itemsPerPage, '#pagination-valvulas', currentPageValvulas);
         } else if ($(this).parents('#pagination-medidores').length) {
             currentPageMedidores = page;
-            //console.log('Cargar página de medidores:', currentPageMedidores);
             renderItems(medidoresData, currentPageMedidores, itemsPerPage, '#medidores-content');
             renderPagination(medidoresData, itemsPerPage, '#pagination-medidores', currentPageMedidores);
         } else if ($(this).parents('#pagination-bombas').length) {
             currentPageBombas = page;
-            //console.log('Cargar página de bombas:', currentPageBombas);
             renderItems(bombasData, currentPageBombas, itemsPerPage, '#bombas-content');
             renderPagination(bombasData, itemsPerPage, '#pagination-bombas', currentPageBombas);
         } else if ($(this).parents('#pagination-filtros').length) {
             currentPageFiltros = page;
-            //console.log('Cargar página de filtros:', currentPageFiltros);
             renderItems(filtrosData, currentPageFiltros, itemsPerPage, '#filtros-content');
             renderPagination(filtrosData, itemsPerPage, '#pagination-filtros', currentPageFiltros);
         } else {
             currentPageAbrazaderas = page;
-            //console.log('Cargar página de abrazaderas:', currentPageAbrazaderas);
             renderItems(abrazaderasData, currentPageAbrazaderas, itemsPerPage, '#abrazaderas-content');
             renderPagination(abrazaderasData, itemsPerPage, '#pagination-abrazaderas', currentPageAbrazaderas);
         }
@@ -176,17 +162,12 @@ $(document).ready(function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Simular una fecha específica (puedes cambiar esta fecha para testear)
     const simulateDate = new Date();
-    //simulateDate.setFullYear(2023); // Cambia el año según necesites
-    //simulateDate.setMonth(11); // Enero (Mes comienza en 0)
-    //simulateDate.setDate(25); // Día de Reyes - 6 de Enero
-
     const today = simulateDate;
     console.log("Fecha simulada:", today);
 
     const yyyy = today.getFullYear();
-    const mm = today.getMonth() + 1; // Meses comienzan en 0
+    const mm = today.getMonth() + 1;
     const dd = today.getDate();
     console.log("Fecha (Formateada):", `${yyyy}-${mm}-${dd}`);
     const logoElement = document.getElementById('logo');
@@ -205,7 +186,6 @@ document.addEventListener('DOMContentLoaded', function() {
     let themeName = '/images/THEME.png';
 
     holidays.forEach(holiday => {
-        
         if (mm === holiday.month && dd === holiday.day) {
             logoName = `/images/ORARECOLTE_LOGO_${holiday.name}.png`;
             themeName = `/images/${holiday.name}.png`;
