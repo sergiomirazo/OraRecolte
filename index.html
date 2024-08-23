@@ -514,21 +514,25 @@
               </h2>
               <img data-type="logo" width="200" src="images/ORARECOLTE_LOGO.png" alt="Ora Recolte, proveedor de piezas para conducción de fluidos en Hermosillo">
             </div>
-            <form action="">
+            <form id="contactForm" name="sentMessage" novalidate="novalidate">
               <div>
-                <input type="text" placeholder="Nombre completo" />
+                <input class="form-control" id="name" type="text" placeholder="Nombre completo *" required="required" data-validation-required-message="Por favor, ingresa tu nombre." />
               </div>
               <div>
-                <input type="text" placeholder="Celular" />
+                <input class="form-control" id="phone" type="tel" placeholder="Teléfono*" required="required" data-validation-required-message="Por favor, ingresa tu número de teléfono." />
+                <p class="help-block text-danger"></p>
               </div>
               <div>
-                <input type="email" placeholder="Email" />
+                <input class="form-control" id="email" type="email" placeholder="Email*" required="required" data-validation-required-message="Por favor, ingresa tu email." />
+                <p class="help-block text-danger"></p>
               </div>
               <div>
-                <input type="empresa" placeholder="Empresa" />
+                <input class="form-control" id="empresa" placeholder="Empresa" type="text" />
+                <p class="help-block text-danger"></p>
               </div>
-              <div>
-                <input type="text" class="message-box" placeholder="Mensaje" />
+              <div class="form-group form-group-textarea mb-md-0">
+                <textarea class="form-control" id="message" placeholder="Tu mensaje*" required="required" data-validation-required-message="Por favor, escríbenos en qué podemos ayudarte."></textarea>
+                <p class="help-block text-danger"></p>
               </div>
               <div class="btn_box">
                 <button>
@@ -661,6 +665,8 @@
   <!-- Google Map -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
   <!-- End Google Map -->
+  <script src="mail/jqBootstrapValidation.js"></script>
+  <script src="mail/contact_me.js"></script>
 
 </body>
 
