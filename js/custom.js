@@ -1,12 +1,3 @@
-// to get current year
-function getYear() {
-    var currentDate = new Date();
-    var currentYear = currentDate.getFullYear();
-    document.querySelector("#displayYear").innerHTML = currentYear;
-}
-
-getYear();
-
 $(document).ready(function() {
     let itemsPerPage = 9; // 3x3 grid
 
@@ -19,7 +10,7 @@ $(document).ready(function() {
     let currentPageValvulas = 1;
     let valvulasData = [];
 
-    $.getJSON('/js/valvulas_data.json')
+    $.getJSON('../js/valvulas_data.json')
         .done(function(data) {
             valvulasData = data;
             renderItems(valvulasData, currentPageValvulas, itemsPerPage, '#valvulas-content');
@@ -33,7 +24,7 @@ $(document).ready(function() {
     let currentPageMedidores = 1;
     let medidoresData = [];
 
-    $.getJSON('/js/medidores_data.json')
+    $.getJSON('../js/medidores_data.json')
         .done(function(data) {
             medidoresData = data;
             renderItems(medidoresData, currentPageMedidores, itemsPerPage, '#medidores-content');
@@ -47,7 +38,7 @@ $(document).ready(function() {
     let currentPageBombas = 1;
     let bombasData = [];
 
-    $.getJSON('/js/bombas_data.json')
+    $.getJSON('../js/bombas_data.json')
         .done(function(data) {
             bombasData = data;
             renderItems(bombasData, currentPageBombas, itemsPerPage, '#bombas-content');
@@ -61,7 +52,7 @@ $(document).ready(function() {
     let currentPageFiltros = 1;
     let filtrosData = [];
 
-    $.getJSON('/js/filtros_data.json')
+    $.getJSON('../js/filtros_data.json')
         .done(function(data) {
             filtrosData = data;
             renderItems(filtrosData, currentPageFiltros, itemsPerPage, '#filtros-content');
@@ -75,7 +66,7 @@ $(document).ready(function() {
     let currentPageAbrazaderas = 1;
     let abrazaderasData = [];
 
-    $.getJSON('/js/abrazadera_data.json')
+    $.getJSON('../js/abrazadera_data.json')
         .done(function(data) {
             abrazaderasData = data;
             renderItems(abrazaderasData, currentPageAbrazaderas, itemsPerPage, '#abrazaderas-content');
@@ -89,7 +80,7 @@ $(document).ready(function() {
     let currentPageLeefo = 1;
     let leefoData = [];
 
-    $.getJSON('/js/leefo_data.json')
+    $.getJSON('../js/leefo_data.json')
         .done(function(data) {
             leefoData = data;
             renderItems(leefoData, currentPageLeefo, itemsPerPage, '#leefo-content');
@@ -189,8 +180,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const mm = today.getMonth() + 1;
     const dd = today.getDate();
     console.log("Fecha (Formateada):", `${yyyy}-${mm}-${dd}`);
-    const logoElement = document.getElementById('logo');
-    const themeElement = document.getElementById('theme');
+
+    // Seleccionar elementos usando el atributo data-type
+    const logoElements = document.querySelectorAll('[data-type="logo"]');
+    const themeElements = document.querySelectorAll('[data-type="theme"]');
 
     const holidays = [
         { month: 1, day: 6, name: 'DIADEREYES' },
@@ -201,16 +194,22 @@ document.addEventListener('DOMContentLoaded', function() {
         { month: 12, day: 25, name: 'NAVIDAD' }
     ];
 
-    let logoName = '/images/ORARECOLTE_LOGO.png';
-    let themeName = '/images/THEME.png';
+    let logoName = '../images/ORARECOLTE_LOGO.png';
+    let themeName = '../images/THEME.png';
 
     holidays.forEach(holiday => {
-        if (mm === holiday.month && dd === holiday.day) {
-            logoName = `/images/ORARECOLTE_LOGO_${holiday.name}.png`;
-            themeName = `/images/${holiday.name}.png`;
+        if (mm === holiday.month) {
+            logoName = `../images/ORARECOLTE_LOGO_${holiday.name}.png`;
+            themeName = `../images/${holiday.name}.png`;
         }
     });
 
-    logoElement.src = logoName;
-    themeElement.src = themeName;
+    // Aplicar los cambios a todos los elementos seleccionados
+    logoElements.forEach(logoElement => {
+        logoElement.src = logoName;
+    });
+
+    themeElements.forEach(themeElement => {
+        themeElement.src = themeName;
+    });
 });
