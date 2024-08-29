@@ -174,7 +174,8 @@ $(document).ready(function() {
 document.addEventListener('DOMContentLoaded', function() {
     const simulateDate = new Date();
     const today = simulateDate;
-    console.log("Fecha simulada:", today);
+    console.log("MADE WITH ❤️ BY SERGIO MIRAZO")
+    console.log("Fecha de hoy:", today);
 
     const yyyy = today.getFullYear();
     const mm = today.getMonth() + 1;
