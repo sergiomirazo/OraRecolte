@@ -343,9 +343,6 @@ a:hover {
   display: flex;
   justify-content: space-between;
 }
-.products_section .box .detail-box .price_box .price_heading {
-  margin-bottom: 0;
-}
 .products_section .box .detail-box .price_box .price_heading span {
   color: #70BE56;
 }
@@ -492,7 +489,7 @@ a:hover {
 }
 .client_section .carousel-control-prev:hover,
 .client_section .carousel-control-next:hover {
-  background-color: #000000;
+  background-color: #00BDF2;
 }
 .client_section .carousel-control-next {
   left: initial;
