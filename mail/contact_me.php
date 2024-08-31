@@ -26,10 +26,11 @@ $email_body = "
 </head>
 <body style='font-family: Arial, sans-serif; background-color: #F4F4F4; padding: 20px;'>
   <div style='background-color: #70BE56; padding: 10px; text-align: center;'>
-    <img src='https://orarecolte.com.mx/images/ORARECOLTE_LOGO.png' alt='Orarecolte Logo' style='width: 200px;'>
+    <p style='color: white'> ORA RECOLTE | Control de fluidos </p>
   </div>
   <div style='background-color: #CDF3D0; padding: 20px;'>
     <h2 style='color: #00BDF2;'>Gracias por contactarnos, $name!</h2>
+    <img src='https://orarecolte.com.mx/images/ORARECOLTE_LOGO.png' alt='Orarecolte Logo' style='width: 200px;'>
     <p style='color: #333;'>Tu solicitud para cotización.</p>
     <p style='color: #333;'>Estos son los detalles:</p>
     <ul style='list-style-type: none; padding: 0;'>
@@ -40,7 +41,7 @@ $email_body = "
       <li><strong>Mensaje:</strong></li>
       <p style='color: #333;'>$message</p>
     </ul>
-    <p style='color: #333;'>Te contactaremos a la brevedad para enviarte la cotización.</p>
+    <h2 style='color: #00BDF2;'>Te contactaremos a la brevedad</h2>
   </div>
   <div style='background-color: #70BE56; padding: 10px; text-align: center; color: #FFF;'>
     <p>&copy; " . date("Y") . " Orarecolte. Todos los derechos reservados.</p>
@@ -50,13 +51,14 @@ $email_body = "
 ";
 
 // Headers
-$headers = "MIME-Version: 1.0" . "\r\n";
-$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-$headers .= "From: no-contestar@orarecolte.com.mx\n";
+$headers = "MIME-Version: 1.0" . "\n";
+$headers .= "Content-type:text/html;charset=UTF-8" . "\n";
+$headers .= "From: info@orarecolte.com.mx\n";
 $headers .= "Reply-To: $email_address";
 
 // Send the email
 mail("sergiomisael91@gmail.com", $email_subject, $email_body, $headers);
+
 
 return true;
 ?>
